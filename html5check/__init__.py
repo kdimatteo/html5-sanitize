@@ -20,6 +20,8 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
 # DEALINGS IN THE SOFTWARE.
 
+# versioned to work as a lib, read stdin as an argument
+
 from __future__ import print_function, with_statement
 
 import os
@@ -71,77 +73,79 @@ def check(argv):
   contentType = None
   inputHandle = None
   service = 'https://html5.validator.nu/'
+  contentType = 'text/html'
+
 
 
   #
   # Parse command line input
   #
-  for arg in argv:
-    if '--help' == arg:
-      print('-h : force text/html')
-      print('-x : force application/xhtml+xml')
-      print('-g : GNU output')
-      print('-e : errors only (no info or warnings)')
-      print('--encoding=foo : declare encoding foo')
-      print('--service=url  : the address of the HTML5 validator')
-      print('One file argument allowed. Leave out to read from stdin.')
-      sys.exit(0)
-    elif arg.startswith('--encoding='):
-      encoding = arg[11:]
-    elif arg.startswith('--service='):
-      service = arg[10:]
-    elif arg.startswith('--'):
-        sys.stderr.write('Unknown argument %s.\n' % arg)
-        sys.exit(2)
-    elif arg.startswith('-'):
-      for c in arg[1:]:
-        if 'x' == c:
-          forceXml = True
-        elif 'h' == c:
-          forceHtml = True
-        elif 'g' == c:
-          gnu = True
-        elif 'e' == c:
-          errorsOnly = True
-        else:
-          sys.stderr.write('Unknown argument %s.\n' % arg)
-          sys.exit(3)        		
-    else:
-      if fileName:
-        sys.stderr.write('Cannot have more than one input file: %s.\n' % argv)
-        sys.exit(1)
-      fileName = arg
+  # for arg in argv:
+  #   if '--help' == arg:
+  #     print('-h : force text/html')
+  #     print('-x : force application/xhtml+xml')
+  #     print('-g : GNU output')
+  #     print('-e : errors only (no info or warnings)')
+  #     print('--encoding=foo : declare encoding foo')
+  #     print('--service=url  : the address of the HTML5 validator')
+  #     print('One file argument allowed. Leave out to read from stdin.')
+  #     sys.exit(0)
+  #   elif arg.startswith('--encoding='):
+  #     encoding = arg[11:]
+  #   elif arg.startswith('--service='):
+  #     service = arg[10:]
+  #   elif arg.startswith('--'):
+  #       sys.stderr.write('Unknown argument %s.\n' % arg)
+  #       sys.exit(2)
+  #   elif arg.startswith('-'):
+  #     for c in arg[1:]:
+  #       if 'x' == c:
+  #         forceXml = True
+  #       elif 'h' == c:
+  #         forceHtml = True
+  #       elif 'g' == c:
+  #         gnu = True
+  #       elif 'e' == c:
+  #         errorsOnly = True
+  #       else:
+  #         sys.stderr.write('Unknown argument %s.\n' % arg)
+  #         sys.exit(3)        		
+  #   else:
+  #     if fileName:
+  #       sys.stderr.write('Cannot have more than one input file: %s.\n' % fileName)
+  #       sys.exit(1)
+  #     fileName = arg
 
   #
   # Ensure a maximum of one forced output type
   #
-  if forceXml and forceHtml:
-    sys.stderr.write('Cannot force HTML and XHTML at the same time.\n')
-    sys.exit(2)
+  # if forceXml and forceHtml:
+  #   sys.stderr.write('Cannot force HTML and XHTML at the same time.\n')
+  #   sys.exit(2)
 
   #
   # Set contentType
   #
-  if forceXml:
-    contentType = 'application/xhtml+xml'
-  elif forceHtml:
-    contentType = 'text/html'
-  elif fileName:
-    m = extPat.match(fileName)
-    if m:
-      ext = m.group(1)
-      ext = ext.translate(maketrans(string.ascii_uppercase, string.ascii_lowercase))    
-      if ext in extDict:
-        contentType = extDict[ext]
-      else:
-        sys.stderr.write('Unable to guess Content-Type from file name. Please force the type.\n')
-        sys.exit(3)
-    else:
-      sys.stderr.write('Could not extract a filename extension. Please force the type.\n')
-      sys.exit(6)    
-  else:
-    sys.stderr.write('Need to force HTML or XHTML when reading from stdin.\n')
-    sys.exit(4)
+  # if forceXml:
+  #   contentType = 'application/xhtml+xml'
+  # elif forceHtml:
+  #   contentType = 'text/html'
+  # elif fileName:
+  #   m = extPat.match(fileName)
+  #   if m:
+  #     ext = m.group(1)
+  #     ext = ext.translate(maketrans(string.ascii_uppercase, string.ascii_lowercase))    
+  #     if ext in extDict:
+  #       contentType = extDict[ext]
+  #     else:
+  #       sys.stderr.write('Unable to guess Content-Type from file name. Please force the type.\n')
+  #       sys.exit(3)
+  #   else:
+  #     sys.stderr.write('Could not extract a filename extension. Please force the type.\n')
+  #     sys.exit(6)    
+  # else:
+  #   sys.stderr.write('Need to force HTML or XHTML when reading from stdin.\n')
+  #   sys.exit(4)
 
   if encoding:
     contentType = '%s; charset=%s' % (contentType, encoding)
@@ -149,19 +153,27 @@ def check(argv):
   #
   # Read the file argument (or STDIN)
   #
-  if fileName:
-    inputHandle = fileName
-  else:
-    inputHandle = sys.stdin
+  # if fileName:
+  #   inputHandle = fileName
+  # else:
+  #   inputHandle = sys.stdin
 
-  with open(inputHandle, mode='rb') as inFile:
-    data = inFile.read()
-    with BytesIO() as buf:
-      # we could use another with block here, but it requires Python 2.7+
-      zipFile = gzip.GzipFile(fileobj=buf, mode='wb')
-      zipFile.write(data)
-      zipFile.close()
-      gzippeddata = buf.getvalue()
+  # with open(inputHandle, mode='rb') as inFile:
+  #   data = inFile.read()
+  #   with BytesIO() as buf:
+  #     # we could use another with block here, but it requires Python 2.7+
+  #     zipFile = gzip.GzipFile(fileobj=buf, mode='wb')
+  #     zipFile.write(data)
+  #     zipFile.close()
+  #     gzippeddata = buf.getvalue()
+
+  data = argv.encode('utf-8')
+  with BytesIO() as buf:
+    # we could use another with block here, but it requires Python 2.7+
+    zipFile = gzip.GzipFile(fileobj=buf, mode='wb')
+    zipFile.write(data)
+    zipFile.close()
+    gzippeddata = buf.getvalue()
 
   #
   # Prepare the request
