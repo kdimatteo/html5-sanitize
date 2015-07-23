@@ -1,0 +1,1 @@
+POC to sanitize untrusted markup to HTML5 compliant
