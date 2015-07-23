@@ -1,0 +1,719 @@
+
+
+
+
+  
+    <base href="http://www.w3.org/People/mimasa/test/schemas/xhtml1-sample.xml">
+    <meta content="en" http-equiv="Content-Language">
+    <title>Sample XHTML 1.0 document</title>
+    <link href="mailto:mimasa@w3.org">
+    <meta content="text/javascript" http-equiv="Content-Script-Type">
+    <link href="xhtml-default.css" rel="stylesheet">
+    <meta content="XHTML, sample" name="keywords">
+    <style>
+      .warning { color: red }
+    </style>
+    <meta content="ISHIKAWA, Masayasu" name="DC.CREATOR">
+    <style>
+      .warning { volume: loud }
+    </style>
+    <link class="help.link" href="http://www.w3.org/TR/html4" rel="Help">
+  
+  
+
+    <h1 class="title">Sample XHTML 1.0 document</h1>
+
+
+    <h2>Contents</h2>
+
+    <ul>
+      <li><a href="#grouping.heading">Grouping elements: <code>div</code> and <code>span</code></a></li>
+      <li><a href="#headings.heading">Headings: <code>h1</code>, <code>h2</code>, <code>h3</code>, <code>h4</code>, <code>h5</code>, <code>h6</code></a></li>
+      <li><a href="#address.heading">Address: <code>address</code></a></li>
+      <li><a href="#bidi.heading">Bidrectionality</a>
+        <ul>
+	  <li><a href="#ltr.heading">Base directionality: left to right</a></li>
+	  <li><a href="#rtl.heading">Base directionality: right to left</a></li>
+	  <li><a href="#bdo.heading">Bidirectionality override: <code>bdo</code></a></li>
+	</ul>
+      </li>
+      <li><a href="#text.heading">Text</a>
+        <ul>
+	  <li><a href="#phrase.heading">Phrase elements: <code>em</code>, <code>strong</code>, <code>dfn</code>, <code>code</code>, <code>samp</code>, <code>kbd</code>, <code>var</code>, <code>cite</code>, <code>abbr</code>, and <code>acronym</code></a></li>
+	  <li><a href="#fonts.heading">Font style elements: <code>tt</code>, <code>i</code>, <code>b</code>, <code>big</code>, and <code>small</code></a></li>
+	  <li><a href="#quotations.heading">Quotations: <code>blockquote</code> and <code>q</code></a></li>
+	  <li><a href="#sub-sup.heading">Subscripts and superscripts: <code>sub</code> and <code>sup</code></a></li>
+	  <li><a href="#p.heading">Paragraphs: <code>p</code></a></li>
+	  <li><a href="#br.heading">Forcing a line break: <code>br</code></a></li>
+	  <li><a href="#pre.heading">Preformatted text: <code>pre</code></a></li>
+	  <li><a href="#ins-del.heading">Marking document changes: <code>ins</code> and <code>del</code></a></li>
+	  <li><a href="#hr.heading">Rules: <code>hr</code></a></li>
+	</ul>
+      </li>
+      <li><a href="#lists.heading">Lists</a>
+        <ul>
+	  <li><a href="#ul.heading">Unordered lists: <code>ul</code></a></li>
+	  <li><a href="#ol.heading">Ordered lists: <code>ol</code></a></li>
+	  <li><a href="#dl.heading">Definition lists: <code>dl</code></a></li>
+        </ul>
+      </li>
+      <li><a href="#tables.heading">Tables</a>
+        <ul>
+          <li><a href="#tables.grouping.heading">Using column and row groups: <code>colgroup</code>, <code>col</code>, <code>thead</code>, <code>tfoot</code>, and <code>tbody</code></a></li>
+          <li><a href="#tables.header.heading">Associating header information with data cells</a></li>
+	  <li><a href="#tables.categorize.heading">Basic table, with categorizing cells</a></li>
+        </ul>
+      </li>
+      <li><a href="#a.heading">Anchors: <code>a</code></a></li>
+      <li><a href="#objects.heading">Objects, Images, and Applets</a>
+        <ul>
+          <li><a href="#img.heading">Including an image: <code>img</code></a></li>
+          <li><a href="#object.heading">Generic inclusion: <code>object</code></a></li>
+          <li><a href="#usemap.heading">Client-side image maps: <code>map</code> and <code>area</code></a></li>
+          <li><a href="#ismap.heading">Server-side image maps</a></li>
+        </ul>
+      </li>
+      <li><a href="#forms.heading">Forms</a></li>
+      <li><a href="#script.heading">Script</a></li>
+    </ul>
+
+
+    <div class="grouping">
+    <h2 class="grouping">Grouping elements: <code>div</code> and <code>span</code></h2>
+
+    <div>
+    <div class="div"><code>div</code></div>
+    <span class="span"><code>span</code></span>
+    </div>
+    </div>
+
+    <div class="headings">
+    <h2 class="headings">Headings: <code>h1</code>, <code>h2</code>, <code>h3</code>, <code>h4</code>, <code>h5</code>, <code>h6</code></h2>
+
+      <h1 class="h1">h1</h1>
+      <h2 class="h2">h2</h2>
+      <h3 class="h4">h3</h3>
+      <h4 class="h4">h4</h4>
+      <h5 class="h5">h5</h5>
+      <h6 class="h6">h6</h6>
+    </div>
+
+    <div>
+    <h2>Address: <code>address</code></h2>
+
+    <address class="address">
+     Address
+    </address>
+    </div>
+
+    <div>
+    <h2>Bidirectionality</h2>
+
+    <h3>Base directionality: left to right</h3>
+
+    <p>
+    Arabic text<span>:</span>
+    <span>غرب</span>
+    </p>
+
+    <h3>Base directionality: right to left</h3>
+
+    <p>
+    <span>Arabic text</span><span>:</span>
+    غرب
+    </p>
+
+    <h3>Bidirectionality override: <code>bdo</code></h3>
+
+    <p>left to right:
+    <bdo class="bdo" dir="ltr">1234567890</bdo></p>
+
+    <p>right to left:
+    <bdo dir="rtl">1234567890</bdo></p>
+    </div>
+
+    <div>
+    <h2>Text</h2>
+
+    <div>
+    <h3>Phrase elements: <code>em</code>, <code>strong</code>, <code>dfn</code>, <code>code</code>, <code>samp</code>, <code>kbd</code>, <code>var</code>, <code>cite</code>, <code>abbr</code>, and <code>acronym</code></h3>
+
+    <ul>
+      <li><em class="em">em</em></li>
+      <li><strong class="strong">strong</strong></li>
+      <li><dfn class="dfn">dfn</dfn></li>
+      <li><code class="code">code</code></li>
+      <li><samp class="samp">samp</samp></li>
+      <li><kbd class="kbd">kbd</kbd></li>
+      <li><var class="var">var</var></li>
+      <li><cite class="cite">cite</cite></li>
+     <li>abbr: <abbr class="abbr">abbr.</abbr></li>
+     <li>acronym: WWW</li>
+    </ul>
+    </div>
+
+    <div>
+    <h3>Font style elements: <code>tt</code>, <code>i</code>, <code>b</code>, <code>big</code>, and <code>small</code></h3>
+
+    <ul>
+      <li>tt</li>
+      <li><i class="i">i</i></li>
+      <li><b class="b">b</b></li>
+      <li>big</li>
+      <li><small class="small">small</small></li>
+    </ul>
+    </div>
+
+    <div>
+    <h3>Quotations:
+    <code>blockquote</code> and <code>q</code></h3>
+
+    <p>An example of quotation:</p>
+
+    <blockquote class="blockquote">
+    <p>John said, <q class="q">I saw
+    Lucy at lunch, she told me <q>Mary wants you to get some
+    ice cream on your way home.</q> I think I will get some at Ben and
+    Jerry's, on Gloucester Road.</q></p>
+    </blockquote>
+    </div>
+
+    <div>
+    <h3>Subscripts and superscripts: <code>sub</code> and <code>sup</code></h3>
+
+    <p>
+    This is
+    <sub class="sub">subscript</sub>,
+    and this is
+    <sup class="sup">superscript</sup>.
+    </p>
+    </div>
+
+    <div>
+    <h3>Paragraphs: <code>p</code></h3>
+
+    <p class="p">
+    This is paragraph.</p>
+    </div>
+
+    <div>
+    <h3>Forcing a line break: <code>br</code></h3>
+
+    <p>Line<br class="br">break</p>
+    </div>
+
+    <div>
+    <h3>Preformatted text: <code>pre</code></h3>
+
+    <pre class="pre">    This is
+        preformatted
+    text.
+    </pre>
+    </div>
+
+    <div>
+    <h3>Marking document changes:
+    <code>ins</code> and <code>del</code></h3>
+
+    <p><ins class="ins">ins</ins> and <del class="del">del</del></p>
+
+    <ins>
+    <p>Inserted paragraph</p>
+    </ins>
+
+    <del>
+    <p>Deleted paragraph</p>
+    </del>
+
+    <del>
+    <p><ins>Some words were inserted</ins>,
+    but later whole paragraph was deleted</p>
+    </del>
+    </div>
+
+    <div>
+    <h3>Rules: <code>hr</code></h3>
+
+    <hr class="hr">
+    </div>
+    </div>
+
+    <div>
+    <h2>Lists</h2>
+
+    <div>
+    <h3>Unordered lists: <code>ul</code></h3>
+
+    <ul class="ul">
+      <li class="li">"Inline" list item</li>
+      <li class="li"><p>"Block" list item</p></li>
+    </ul>
+    </div>
+
+    <div>
+    <h3>Ordered lists: <code>ol</code></h3>
+
+    <ol class="ol">
+      <li class="li">"Inline" list item</li>
+      <li class="li"><p>"Block" list item</p></li>
+    </ol>
+    </div>
+
+    <div>
+    <h3>Definition lists: <code>dl</code></h3>
+
+    <dl class="dl">
+      <dt class="dt">Definition term</dt>
+      <dd class="dd">"Inline" definition description</dd>
+      <dd class="dd">"Block" definition description</dd>
+    </dl>
+    </div>
+    </div>
+
+    <h2>Tables</h2>
+
+    <h3>Using column and row groups: <code>colgroup</code>, <code>col</code>, <code>thead</code>, <code>tfoot</code>, and <code>tbody</code></h3>
+
+    <table class="table">
+      <caption class="caption">Caption</caption>
+      <colgroup class="colgroup">
+	<col class="col" span="2">
+	<col span="2">
+      </colgroup>
+      <thead class="thead">
+	<tr class="thead.tr">
+	  <th class="thead.th.inline" colspan="1">Inline content in <code>th</code> in <code>thead</code></th>
+	  <th class="thead.th.block" colspan="1"><p>Block content in <code>th</code> in <code>thead</code></p></th>
+	  <td class="thead.td.inline" colspan="1" rowspan="1">Inline content in <code>td</code> in <code>thead</code></td>
+	  <td class="thead.td.block" colspan="1" rowspan="1"><p>Block content in <code>td</code> in <code>thead</code></p></td>
+	</tr>
+      </thead>
+      <tfoot class="tfoot">
+	<tr class="tfoot.tr">
+	  <th class="tfoot.th.inline" colspan="1">Inline content in <code>th</code> in <code>tfoot</code></th>
+	  <th class="tfoot.th.block" colspan="1"><p>Block content in <code>th</code> in <code>tfoot</code></p></th>
+	  <td class="tfoot.td.inline" colspan="1" rowspan="1">Inline content in <code>td</code> in <code>tfoot</code></td>
+	  <td class="tfoot.td.block" colspan="1" rowspan="1"><p>Block content in <code>td</code> in <code>tfoot</code></p></td>
+	</tr>
+      </tfoot>
+      <tbody class="tbody">
+	<tr class="tbody.tr">
+	  <th class="tbody.th.inline" colspan="1">Inline content in <code>th</code> in <code>tbody</code></th>
+	  <th class="tbody.th.block" colspan="1"><p>Block content in <code>th</code> in <code>tbody</code></p></th>
+	  <td class="tbody.td.inline" colspan="1" rowspan="1">Inline content in <code>td</code> in <code>tbody</code></td>
+	  <td class="tbody.td.block" colspan="1" rowspan="1"><p>Block content in <code>td</code> in <code>tbody</code></p></td>
+	</tr>
+      </tbody>
+    </table>
+
+    <h3>Associating header information with data cells</h3>
+
+    <table>
+      <colgroup><col span="1">
+      <col span="3">
+      </colgroup><thead>
+	<tr>
+	  <th colspan="1">thead.th1</th>
+	  <th colspan="1">thead.th2</th>
+	  <th colspan="1">thead.th3</th>
+	  <th colspan="1">thead.th4</th>
+	</tr>
+      </thead>
+      <tbody>
+	<tr>
+	  <th colspan="1">tbody.tr1.th1</th>
+	  <td colspan="1" rowspan="1">tbody.tr1.td1</td>
+	  <td colspan="1" rowspan="1">tbody.tr1.td2</td>
+	  <td colspan="1" rowspan="1">tbody.tr1.td3</td>
+	</tr>
+	<tr>
+	  <th colspan="1">tbody.tr2.th1</th>
+	  <td colspan="1" rowspan="1">tbody.tr2.td1</td>
+	  <td colspan="1" rowspan="1">tbody.tr2.td2</td>
+	  <td colspan="1" rowspan="1">tbody.tr2.td3</td>
+	</tr>
+      </tbody>
+    </table>
+
+    <h3>Basic table, with categorizing cells</h3>
+
+    <table>
+      <caption>Travel Expense Report</caption>
+      <colgroup>
+      </colgroup>
+      <tbody><tr>
+        <th></th>
+        <th>Meals</th>
+        <th>Hotels</th>
+        <th>Transport</th>
+        <td>subtotals</td>
+      </tr>
+      <tr>
+        <th>San Jose</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <td></td>
+      </tr>
+      <tr>
+        <td>25-Aug-97</td>
+        <td>37.74</td>
+        <td>112.00</td>
+        <td>45.00</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>26-Aug-97</td>
+        <td>27.28</td>
+        <td>112.00</td>
+        <td>45.00</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>subtotals</td>
+        <td>65.02</td>
+        <td>224.00</td>
+        <td>90.00</td>
+        <td>379.02</td>
+      </tr>
+      <tr>
+        <th>Seattle</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <td></td>
+      </tr>
+      <tr>
+        <td>27-Aug-97</td>
+        <td>96.25</td>
+        <td>109.00</td>
+        <td>36.00</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>28-Aug-97</td>
+        <td>35.00</td>
+        <td>109.00</td>
+        <td>36.00</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>subtotals</td>
+        <td>131.25</td>
+        <td>218.00</td>
+        <td>72.00</td>
+        <td>421.25</td>
+      </tr>
+      <tr>
+        <th>Totals</th>
+        <td>196.27</td>
+        <td>442.00</td>
+        <td>162.00</td>
+        <td>800.27</td>
+      </tr>
+    </tbody></table>
+
+    <h2>Anchors: <code>a</code></h2>
+
+    <p>For more information about XHTML 1.0, please consult the 
+    <a class="a" href="http://www.w3.org/TR/xhtml1">XHTML 1.0 Specification</a>.</p>
+
+    <p>For more information about semantics of the elements and their
+    attributes in XHTML, please consult the 
+    <a href="http://www.w3.org/TR/html4">HTML 4 Specification</a>.</p>
+
+    <p>Links to the <a href="#tables.heading">previous section</a> and the <a href="#objects.heading" rel="Next">next section</a>.</p>
+
+    <p>
+    Body elements:
+    <a href="#div">div</a>, <a href="#span">span</a>,
+    <a href="#h1">h1</a>, <a href="#h2">h2</a>, <a href="#h3">h3</a>,
+    <a href="#h4">h4</a>, <a href="#h5">h5</a>, <a href="#h6">h6</a>,
+    <a href="#address">address</a>, <a href="#bdo">bdo</a>,
+    <a href="#em">em</a>, <a href="#strong">strong</a>, <a href="#dfn">dfn</a>,
+    <a href="#code">code</a>, <a href="#samp">samp</a>, <a href="#kbd">kbd</a>,
+    <a href="#var">var</a>, <a href="#cite">cite</a>, <a href="#abbr">abbr</a>,
+    <a href="#acronym">acronym</a>, <a href="#tt">tt</a>, <a href="#i">i</a>,
+    <a href="#b">b</a>, <a href="#big">big</a>, <a href="#small">small</a>,
+    <a href="#blockquote">blockquote</a>, <a href="#q">q</a>,
+    <a href="#sub">sub</a>, <a href="#sup">sup</a>, <a href="#p">p</a>,
+    <a href="#br">br</a>, <a href="#pre">pre</a>,
+    <a href="#ins">ins</a>, <a href="#del">del</a>, <a href="#hr">hr</a>,
+    <a href="#ul">ul</a>, <a href="#ol">ol</a>, <a href="#ul.li.inline">li</a>,
+    <a href="#dl">dl</a>, <a href="#dt">dt</a>, <a href="#dd.inline">dd</a>,
+    <a href="#table">table</a>, <a href="#caption">caption</a>,
+    <a href="#colgroup">colgroup</a>, <a href="#col">col</a>,
+    <a href="#thead">thead</a>, <a href="#tfoot">tfoot</a>,
+    <a href="#tbody">tbody</a>, <a href="#thead.tr">tr</a>,
+    <a href="#thead.th.inline">th</a>, <a href="#thead.td.inline">td</a>,
+    <a href="#a">a</a>, <a href="#img">img</a>, <a href="#object">object</a>,
+    <a href="#map">map</a>, <a href="#area">area</a>
+    </p>
+
+    <div>
+    <h2>Objects, Images, and Applets</h2>
+
+    <div>
+    <h3>Including an image: <code>img</code></h3>
+
+    <p><img alt="image" class="img" src="dot.png" title="img"></p>
+    </div>
+
+    <div>
+    <h3>Generic inclusion: <code>object</code></h3>
+
+    <p><object class="object" data="dot.png" type="image/png">
+    <param name="width" value="40">
+    <param name="height" value="40">
+    <object data="dot.jpg" type="image/jpeg">
+    <param name="width" value="40">
+    <param name="height" value="40">
+    <img alt="Image" src="dot.png">
+    </object></object></p>
+    </div>
+
+    <div>
+    <h3>Client-side image maps: <code>map</code> and <code>area</code></h3>
+
+    <p><img alt="image" src="dot.png"></p>
+
+    <p><img alt="image" src="dot.png"></p>
+
+    <div>
+    <map class="map" name="map">
+      <area class="area">
+      <area>
+      <area>
+      <area>
+    </map>
+    </div>
+
+    <div>
+    <map class="map" name="map2">
+      <ul>
+        <li><a href="#grouping.heading">Grouping elements: div and span</a></li>
+        <li><a href="#headings.heading">Headings: h1, h2, h3, h4, h5, h6</a></li>
+        <li><a href="#address.heading">Address: address</a></li>
+      </ul>
+    </map>
+    </div>
+    </div>
+
+    <div>
+    <h3>Server-side image maps</h3>
+
+    <p><a href="uri"><img alt="Server-side image maps" src="dot.png"></a></p>
+    </div>
+    </div>
+
+    <h2>Forms</h2>
+
+    <form class="form">
+      <fieldset class="fieldset">
+      <legend class="legend">Input fields</legend>
+
+      <fieldset>
+      <legend>Text input</legend>
+
+      <p>
+      <label class="label">Text input field:</label>
+      <input class="input">
+      </p>
+
+      <p>
+      <label>Disabled text input field:</label>
+      <input class="input">
+      </p>
+
+      <p>
+      <label>Readonly text input field:</label>
+      <input class="input">
+      </p>
+
+      </fieldset>
+
+      <fieldset>
+      <legend>Password input</legend>
+
+      <p>
+      <label>Password input field:</label>
+      <input>
+      </p>
+
+      <p>
+      <label>Disabled password input field:</label>
+      <input>
+      </p>
+
+      <p>
+      <label>Readonly password input field:</label>
+      <input>
+      </p>
+      </fieldset>
+
+      <fieldset>
+      <legend>Checkboxes</legend> 
+      <p>
+      <label>1:</label>
+      <input>
+      <label>2:</label>
+      <input>
+      <label>3:</label>
+      <input>
+      <label>4:</label>
+      <input>
+      <label>5:</label>
+      <input>
+      <label>disabled:</label>
+      <input>
+      </p>
+      </fieldset>
+
+      <fieldset>
+      <legend>Radio buttons</legend>
+      <p>
+      <label>a.</label>
+      <input>
+      <label>b.</label>
+      <input>
+      <label>c.</label>
+      <input>
+      <label>d.</label>
+      <input>
+      <label>e.</label>
+      <input>
+      <label>disabled.</label>
+      <input>
+      </p>
+      </fieldset>
+
+      <fieldset>
+      <legend>File upload</legend>
+      <p><label>File upload:</label>
+      <input></p>
+
+      <p><label>Disabled file upload:</label>
+      <input></p>
+      </fieldset>
+
+      <fieldset>
+      <legend>Image submit button</legend>
+      <p><label>Image submit button:</label>
+      <input></p>
+
+      <p><label>Disabled image submit button:</label>
+      <input></p>
+      </fieldset>
+
+
+      <fieldset>
+      <legend>Submit/Reset</legend>
+      <p><input>
+      <input>
+      <input></p>
+
+      <p><input>
+      <input>
+      <input></p>
+      </fieldset>
+
+      <p><input></p>
+      </fieldset>
+    
+      <fieldset>
+      <legend>Button</legend>
+      <button>
+      Submit button using<br> the <code>button</code> element</button>
+      <button>
+      Reset button using<br> the <code>button</code> element</button>
+      <button>
+      A button using the<br> <code>button</code> element</button>
+      <button>
+      A disabled button using<br> the <code>button</code> element</button>
+
+      </fieldset>
+
+      <fieldset>
+      <legend>Option selector</legend>
+
+      <p><label>Single selection:</label>
+        <select class="select">
+	  <optgroup class="optgroup" label="optgroup">
+	    <option class="option">Option 1</option>
+	    <option>Option 2</option>
+	  </optgroup>
+	  <optgroup label="disabled_optgroup">
+	    <option>Option 3 (disabled)</option>
+	    <option>Option 4 (disabled)</option>
+	  </optgroup>
+	  <option>Option 5</option>
+	  <option>Option 6 (default)</option>
+	  <option>Option 7 (disabled)</option>
+	</select>
+      </p>
+
+      <p><label>Multiple selections:</label>
+        <select class="select">
+	  <optgroup class="optgroup" label="optgroup">
+	    <option class="option">Option 1</option>
+	    <option>Option 2</option>
+	  </optgroup>
+	  <optgroup label="disabled_optgroup">
+	    <option>Option 3 (disabled)</option>
+	    <option>Option 4 (disabled)</option>
+	  </optgroup>
+	  <option>Option 5</option>
+	  <option>Option 6 (default)</option>
+	  <option>Option 7 (disabled)</option>
+	</select>
+      </p>
+
+      <p><label>Disabled selection:</label>
+        <select class="select">
+	  <optgroup class="optgroup" label="optgroup">
+	    <option class="option">Option 1</option>
+	    <option>Option 2</option>
+	  </optgroup>
+	  <optgroup label="disabled_optgroup">
+	    <option>Option 3 (disabled)</option>
+	    <option>Option 4 (disabled)</option>
+	  </optgroup>
+	  <option>Option 5</option>
+	  <option>Option 6 (default)</option>
+	  <option>Option 7 (disabled)</option>
+	</select>
+      </p>
+      </fieldset>
+
+      <fieldset>
+      <legend>Textarea</legend>
+      <p><label>Textarea:</label>
+      <textarea class="textarea">default text</textarea></p>
+      <p><label>Disabled textarea:</label>
+      <textarea class="textarea">default text</textarea></p>
+      <p><label>Readonly textarea:</label>
+      <textarea class="textarea">default text</textarea></p>
+      </fieldset>
+
+    </form>
+
+    <h2>Script</h2>
+
+    <script>
+    //<![CDATA[
+    document.write("<p>Text generated by JavaScript.<\/p>")
+    //]]>
+    </script>
+
+    <noscript class="noscript">
+      <p>Alternate text in <code>noscript</code>.</p>
+    </noscript>
+
+    <hr>
+
+    <address>
+       <a href="mailto:mimasa@w3.org">Masayasu Ishikawa</a>
+    </address>
+
+  
+
